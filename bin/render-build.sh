@@ -7,5 +7,4 @@ bin/rails assets:precompile
 bin/rails assets:clean
 
 bundle exec rails db:migrate
-bundle exec rails db:seed
-bundle exec rails spree_sample:load
+
