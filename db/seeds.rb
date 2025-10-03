@@ -9,3 +9,14 @@
 #   end
 
 Spree::Core::Engine.load_seed if defined?(Spree::Core)
+
+# Minimal product seed for free Render instance
+10.times do |i|
+  Spree::Product.create!(
+    name: "Test Product #{i+1}",
+    price: (10 + i),          # price from 10 to 19
+    available_on: Time.current,
+    shipping_category: Spree::ShippingCategory.first || Spree::ShippingCategory.create!(name: "Default")
+  )
+end
+
